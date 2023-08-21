@@ -1,17 +1,11 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 import DishRow from "../components/DishRow";
 import Cart from "../components/Cart";
+import { StatusBar } from "expo-status-bar";
 
 const RestaurantScreen = () => {
   const { params: item } = useRoute();
@@ -20,6 +14,7 @@ const RestaurantScreen = () => {
   return (
     <View>
       <Cart />
+      <StatusBar style="light" />
       <ScrollView>
         <Image className="w-full h-72" source={item.image} />
         <TouchableOpacity
