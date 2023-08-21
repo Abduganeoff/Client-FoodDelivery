@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RestaurantScreen from "./screens/RestaurantScreen";
 import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
+import OrderPreparing from "./screens/OrderPreparing";
+import DeliveryScreen from "./screens/DeliveryScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +22,16 @@ const Navigation = () => {
           name="Cart"
           options={{ presentation: "modal" }}
           component={CartScreen}
+        />
+        <Stack.Screen
+          name="OrderPreparing"
+          options={{ presentation: "fullScreenModal" }}
+          component={OrderPreparing}
+        />
+        <Stack.Screen
+          name="Delivery"
+          options={{ presentation: "fullScreenModal" }}
+          component={DeliveryScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
