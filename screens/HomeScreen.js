@@ -1,10 +1,12 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, Text, TextInput, View } from "react-native";
+import { FlatList, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 import Catogories from "../components/Catogories";
+import FeaturedRow from "../components/FeaturedRow";
+import { featured } from "../constants";
 
 const HomeScreen = () => {
   return (
@@ -39,6 +41,19 @@ const HomeScreen = () => {
       >
         {/* Categories */}
         <Catogories />
+        {/* Features */}
+        <View className="mt-5">
+          {[featured, featured, featured].map((item, index) => {
+            return (
+              <FeaturedRow
+                key={item.id + index}
+                title={item.title}
+                restaurants={item.restaurants}
+                description={item.description}
+              />
+            );
+          })}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
