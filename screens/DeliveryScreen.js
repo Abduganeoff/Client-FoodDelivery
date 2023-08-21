@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import { featured } from "../constants";
 import { themeColors } from "../theme";
 import * as Icon from "react-native-feather";
 import { useDispatch, useSelector } from "react-redux";
